@@ -1,0 +1,25 @@
+@charset "utf-8";
+*{margin: 0px;padding: 0px;box-sizing: border-box;}
+body{background-color: #fff;}
+/*Start Section*/
+body section { width: 500px;height: 500px; border: 6px solid rgb(214,214,214); position: fixed;top: 50%;left: 50%;transform: translate(-50%,-50%);background-color: rgb(228, 228, 228);}
+body section .container{position: absolute;--value:10%; top: var(--value);bottom: var(--value);left: var(--value);right: var(--value);margin: auto;transform: scale(.2); animation:scaleContainer 2s 2 ease-in-out forwards;animation-delay: 2s;}
+body section .container :is(.rectangle_1,.rectangle_2){height: 50%;position: relative;overflow: hidden;}
+    /* .rectangle_1 */
+body section .container .rectangle_1 :is(.triangle_1,.triangle_2){width: 50%;min-height: 100%;background-image: linear-gradient(to top,rgb(86, 126, 161) 99%,#0000 1%);transform-origin: bottom;}
+body section .container .rectangle_1 {display: flex;width: 100%;}
+body section .container .rectangle_1 .triangle_1{transform: skewX(-45deg);}
+body section .container .rectangle_1 .triangle_2{transform: skewX(45deg);}
+body section .container .rectangle_1 :is(.triangle_3,.triangle_4){width: 50%;min-height: 100%;background-color:rgb(228, 228, 228);transform-origin: bottom;position: absolute;}
+body section .container .rectangle_1 .triangle_3{transform: skewX(-45deg) translateX(-99%);}
+body section .container .rectangle_1 .triangle_4{transform: skewX(45deg) translateX(199%);}
+    /* .rectangle_2 */
+body section .container .rectangle_2{background-color: rgb(104, 155, 198);width: 98.8%;margin: auto;margin-top: -.5px;}
+body section .container .rectangle_2 :is(.triangle_left,.triangle_right){width: 50%;min-height: 100%;position: absolute;border-bottom: .23em solid #fff;}
+body section .container .rectangle_2 .triangle_left{transform: skewY(-12deg);transform-origin: left bottom;background-color:rgb(43,118,183);}
+body section .container .rectangle_2 .triangle_right{right: 0px;transform: skewY(12deg);transform-origin: right bottom;background-color:rgb(69,140,204);}
+body section .container .rectangle_2 :is(.triangleLeft,.triangleRight){background-color:rgb(62, 110, 148);min-height: 100%;width: 50.1%;position: absolute;}
+body section .container .rectangle_2 .triangleLeft{transform: skewY(12deg) translateY(-100%);transform-origin: left bottom;}
+body section .container .rectangle_2 .triangleRight{right: 0px;transform: skewY(-12deg) translateY(-100%);transform-origin: right bottom;}
+/*End Section*/
+@keyframes scaleContainer{0%{transform: scale(.2);}90%{transform: scale(1.05);}100%{transform: scale(1.0);}}
